@@ -1,0 +1,18 @@
+IDS – OpenCanary
+
+
+Command:
+
+git clone https://github.com/thinkst/opencanary
+cd opencanary
+sudo python3 setup.py install
+
+
+Next, run the following command to create a sample config file to the canary to edit:
+opencanaryd --copyconfig
+
+We need to configure the conf file in order to enable specific attack detection service.
+We have attached our config file opencanary.conf
+
+Then finally, run canary with the following:
+opencanaryd --start

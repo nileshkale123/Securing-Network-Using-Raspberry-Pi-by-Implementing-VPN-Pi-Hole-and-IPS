@@ -1,0 +1,23 @@
+Pi-Hole
+
+Method 1 (Automated Installer)
+curl -sSL https://install.pi-hole.net | bash
+
+Method 2 (Download and Execute)
+wget -O basic-install.sh https://install.pi-hole.net
+sudo bash basic-install.sh
+
+Any settings we configure during installation can be updated later. 
+At some point, it asks us to select an upstream DNS provider. This is the server on which lookups of non-blocked hostnames will be performed.
+
+Then, it will ask to select an adlist. leave the default on. Later, we can add more lists, including custom ones.
+
+When the installation is finished, we get a summary message that includes the IP addresses of the Pi-hole and the randomly generated admin password.
+
+To be sure the installation succeeded, open a web browser and go to http://IP_ADDRESS/admin, where IP_ADDRESS is the IPv4 address of the Pi-hole device. 
+Note that the http://pihole/admin only works after we setup device to use the Pi-hole DNS server. Click on log-in and enter (randomly-generated) password. 
+
+ 
+Now that we have Pi-hole installed, the last step is configuring network to use Pi-hole as its DNS server
+
+The preferred method for doing this is to change our router's DNS server and point it to the Pi-hole IP address, ensuring any client that connects to the network receives the Pi-hole as its DNS server. Typically this requires us to access the router's administration panel. There, we should have a field to set the primary and secondary DNS servers. Set the primary address to the Pi-hole's IP address, and reset any open network connection we may have on the devices. Now, when we connect to home network, we should get the Pi-hole as the DNS server.

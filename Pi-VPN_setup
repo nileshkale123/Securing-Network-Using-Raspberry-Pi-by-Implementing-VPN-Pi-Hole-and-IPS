@@ -1,0 +1,27 @@
+Pi-VPN
+
+Step 1
+
+Open the terminal and run the following command
+curl -L https://install.pivpn.io | bash
+
+Then it will prompt with a dialog box and will be asked with a few questions on 
+setting up the OpenVPN server. Here we will choose the default settings because it is 
+enough to make the server up and running.
+
+Creating a client ovpn profile
+Now that the server is running, we need to configure the clients which will be 
+connecting to the server. In order to do this, we need to generate an ovpn profile for 
+each and every client that will be accessing server.
+
+
+Run the following command to add a client
+pivpn add
+
+Then proceed with entering a client name, number of days the certificate would last, 
+and a password.When client profiles are added, they get stored under /home/user/ovpns directory.
+
+
+Now that we have a .ovpn file for device, we need to install the necessary software on 
+the client in order to use this file. OpenVPN Connect is the recommended software to 
+use on all iOS, Android, macOS, Linux and Windows devices.
